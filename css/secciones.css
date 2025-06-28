@@ -514,3 +514,32 @@ section#catalogo {
   z-index: 10;
   text-align: center;
 }
+
+.texto-catalogo h2 {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 95vw;
+}
+
+.texto-catalogo h2 {
+  font-size: 1rem;
+}
+
+@media (min-width: 992px) and (max-width: 1100px) {
+  .tarjeta-bienvenida {
+    bottom: 250px;
+  }
+}
+
+@media (min-width: 800px) and (max-width: 840px) {
+  .tarjeta-bienvenida {
+    bottom: 350px !important;
+  }
+}
+
+@media (max-width: 380px) {
+  .tarjeta-bienvenida {
+    bottom: 260px !important;
+  }
+}
