@@ -1,0 +1,279 @@
+header.franja-superior {
+  background-color: #003366;
+  color: white;
+  padding: 10px 20px;
+}
+
+.contenedor-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 960px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+
+.logo img {
+  height: 60px;
+}
+
+.menu-principal {
+  display: flex;
+  gap: 20px;
+}
+
+.menu-principal a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.iconos {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.icono {
+  width: 24px;
+  height: 24px;
+}
+
+.icono:hover {
+  transform: scale(1.1);
+  transition: transform 0.2s ease, filter 0.2s ease;
+  filter: brightness(1.2);
+}
+
+.menu-toggle {
+  display: none;
+  font-size: 26px;
+  cursor: pointer;
+  color: white;
+}
+
+/* Consolidado */
+nav.menu-movil {
+  display: none;
+  flex-direction: column;
+  background: #ffffff;
+  text-align: center;
+  padding: 10px 0;
+  position: absolute;
+  top: 80px; /* Ajustar según la altura de tu header */
+  left: 0;
+  width: 100%;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  overflow-x: hidden;
+}
+
+nav.menu-movil.show {
+  display: flex;
+  z-index: 999;
+}
+
+nav.menu-movil a {
+  color: #003366;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 10px 0;
+}
+
+#iconos-redes {
+  position: fixed;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 1000;
+}
+
+#iconos-redes img {
+  width: 36px;
+  height: 36px;
+  background-color: white;
+  border-radius: 50%;
+  padding: 6px;
+  box-shadow: 0 0 6px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+}
+
+#iconos-redes img:hover {
+  border: 2px solid #007acc;
+  transform: scale(1.1);
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+.franja-pie {
+  background-color: #003366;
+  color: white;
+  text-align: center;
+  padding: 15px 10px;
+  font-size: 0.85rem;
+}
+
+a:hover,
+button:hover {
+  filter: brightness(1.1);
+  transition: filter 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+}
+
+.tarjeta-cupon.nueva {
+  background: #fff9dc; /* amarillo pastel */
+  border: 1px solid #e0c97f;
+  padding: 20px;
+  width: 260px;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  border-radius: 0; /* sin puntas redondeadas */
+}
+
+.tarjeta-cupon.nueva p {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.tarjeta-cupon.nueva button,
+.tarjeta-cupon.nueva a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 10px;
+  font-size: 0.95rem;
+  border-radius: 0;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  color: white;
+}
+
+.tarjeta-cupon.nueva button {
+  background-color: #003366;
+}
+
+.tarjeta-cupon.nueva a {
+  background-color: #25D366;
+}
+
+.tarjeta-cupon.nueva button[disabled] {
+  background-color: #999;
+  cursor: not-allowed;
+  color: #fff;
+}
+
+.icono-wsp {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
+.cupon {
+  position: relative;
+  margin-left: 10px;
+}
+
+.icono-cupon {
+  width: 30px;
+  height: 30px;
+  animation: parpadeo 1.8s infinite;
+}
+
+.contador-cupon {
+  position: absolute;
+  top: -5px;
+  right: -10px;
+  background: red;
+  color: white;
+  font-size: 10px;
+  padding: 1px 5px;
+  border-radius: 50%;
+  border: 1px solid white;
+  font-weight: bold;
+}
+
+.icono-carrito {
+  width: 20px;
+  height: 20px;
+  animation: parpadeo 1.8s infinite;
+}
+
+#contador-carrito {
+  position: absolute;
+  top: -6px;
+  right: -10px;
+  background: red;
+  color: white;
+  font-size: 10px;
+  padding: 2px 5px;
+  border-radius: 50%;
+  border: 1px solid white;
+  font-weight: bold;
+  line-height: 1;
+}
+
+@keyframes parpadeo {
+  0%, 100% { filter: brightness(1); }
+  50% { filter: brightness(1.6); }
+}
+
+.carrito {
+  position: relative;
+}
+
+@media (max-width: 768px) {
+  #detalle-carrito {
+    position: fixed;
+    top: 80px;
+    left: 10px;
+    right: 10px;
+    width: auto;
+    max-width: none;
+    overflow-x: auto;
+  }
+
+  #detalle-carrito table {
+    font-size: 14px;
+    min-width: 600px; /* fuerza scroll horizontal si no entra */
+  }
+
+  #detalle-carrito th,
+  #detalle-carrito td {
+    padding: 6px;
+  }
+
+  .btn-ir-catalogo {
+    width: 100%;
+    text-align: center;
+    box-sizing: border-box;
+  }
+
+  /* Ajuste responsive para campos de formulario */
+  input, select, textarea {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 8px;
+    margin-bottom: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+
+  select {
+    width: 100%;
+    font-size: 16px;
+    padding: 8px;
+    box-sizing: border-box;
+  }
+}
